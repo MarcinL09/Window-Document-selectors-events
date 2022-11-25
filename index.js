@@ -38,6 +38,26 @@ validNumberElement.addEventListener('input', function(){
         paragraphElement.style.fontSize = '12px'
     }
 });
+/*
+Add three paragraphs to your HTML and a button. When the user clicks on a button, change the
+color of all of the paragraphs to green. When the user clicks on the button again, change the
+color of the paragraphs to black. If the user clicks on the button for the third time, change the
+color back to green and so forth.
+*/
+
+const paragraphToBeColored = document.querySelectorAll('.color');
+const colorChangingButton = document.querySelector('#color-changer');
+
+colorChangingButton.addEventListener('click', function () {
+    paragraphToBeColored.forEach(function (element ) {
+       if (element.style.color === 'red') {
+           element.style.color = 'black';
+       } else {
+           element.style.color = 'red';
+        }
+        console.log(element);
+    });
+});
 
 
 
