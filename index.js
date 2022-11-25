@@ -18,4 +18,13 @@ const text = document.querySelectorAll('p');
 
 text.forEach(function(text){
     text.classList.add("underlined-text");
+});
+
+// Add a button and an input to your HTML. Every time the user clicks the button, change the
+// background color of the button to the color typed by the user.
+
+const nameInput = document.querySelector('#name');
+    buttonElement.addEventListener('click', function() {
+        document.body.style.background = nameInput.value;
+        console.log(nameInput.value);
 })
