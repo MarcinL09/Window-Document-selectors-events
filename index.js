@@ -30,12 +30,16 @@ buttonElement.addEventListener('click', function() {
 // Add an input and a paragraph to your HTML. Every time the user puts in a valid number, change
 // the font size of the paragraph. If the user didn't put in a valid value, set it to 12px.
 const paragraphElement = document.querySelector('#text')
-const validNumberElement = document.querySelector('#number');
-validNumberElement.addEventListener('input', function(){
-    if (validNumberElement) {
-        paragraphElement.style.fontSize = `${validNumberElement.value}px`;
-    } if (validNumberElement === undefined) {
-        paragraphElement.style.fontSize = '12px'
+const fontSizeNumberElement = document.querySelector('#number');
+function isValueValid(value) {
+
+}
+fontSizeNumberElement.addEventListener('input', function(){
+    const value = fontSizeNumberElement.value;
+    if (isValueValid(value)) {
+        paragraphElement.style.fontSize = `${fontSizeNumberElement.value}px`;
+    } else {
+        paragraphElement.style.fontSize = '12px';
     }
 });
 /*
@@ -50,12 +54,11 @@ const colorChangingButton = document.querySelector('#color-changer');
 
 colorChangingButton.addEventListener('click', function () {
     paragraphToBeColored.forEach(function (element ) {
-       if (element.style.color === 'red') {
+       if (element.style.color === 'green') {
            element.style.color = 'black';
        } else {
-           element.style.color = 'red';
+           element.style.color = 'green';
         }
-        console.log(element);
     });
 });
 
